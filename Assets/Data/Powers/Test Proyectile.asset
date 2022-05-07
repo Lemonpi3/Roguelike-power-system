@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f77aa61be8a87643b8fb267f5519fbe, type: 3}
+  m_Name: Test Proyectile
+  m_EditorClassIdentifier: 
+  <powerName>k__BackingField: Test Proyectile
+  <powerDescription>k__BackingField:
+  - TEST
+  <icon>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
+  <iconBorder>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
+  <powerSelectionColor>k__BackingField: {r: 0.9245283, g: 0.02180491, b: 0.02180491, a: 1}
+  <powerPrefab>k__BackingField: {fileID: 8929177868852266760, guid: 3d8a2f3cb6192ae4e8cfff383f5c2ef5, type: 3}
+  <basePowerDamage>k__BackingField: 1
+  <basePowerModifier>k__BackingField: 0
+  <baseAttackSpeed>k__BackingField: 1
+  <maxRank>k__BackingField: 1
+  <dmgUpPerLevel>k__BackingField: 1
+  <dmgUpPerRank>k__BackingField: 00000000
+  <powerModifierPerRank>k__BackingField:
+  - 0
+  <attackSpeedPerRankModifier>k__BackingField:
+  - 0
+  <proyectile>k__BackingField: {fileID: 7562477152680260775, guid: 4bf9dc530426f2f4fabb968eb885de83, type: 3}
+  <proyectileSpeed>k__BackingField: 200
+  <proyectileDuration>k__BackingField: 5
+  <proyectileScale>k__BackingField: 0.5
+  <proyectilesFired>k__BackingField: 1
+  <pircing>k__BackingField: 0
+  <proyectilesAddedPerRank>k__BackingField: 00000000
+  <proyectileExtraDuration>k__BackingField:
+  - 0

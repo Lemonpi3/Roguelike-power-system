@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f77aa61be8a87643b8fb267f5519fbe
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - <icon>k__BackingField: {instanceID: 0}
+  - <iconBorder>k__BackingField: {instanceID: 0}
+  - <powerPrefab>k__BackingField: {fileID: 8929177868852266760, guid: 3d8a2f3cb6192ae4e8cfff383f5c2ef5, type: 3}
+  - <proyectile>k__BackingField: {fileID: 7562477152680260775, guid: 4bf9dc530426f2f4fabb968eb885de83, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
