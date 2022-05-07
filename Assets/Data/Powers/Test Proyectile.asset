@@ -30,11 +30,11 @@ MonoBehaviour:
   <attackSpeedPerRankModifier>k__BackingField:
   - 0
   <proyectile>k__BackingField: {fileID: 7562477152680260775, guid: 4bf9dc530426f2f4fabb968eb885de83, type: 3}
-  <proyectileSpeed>k__BackingField: 200
+  <proyectileSpeed>k__BackingField: 750
   <proyectileDuration>k__BackingField: 5
   <proyectileScale>k__BackingField: 0.5
-  <proyectilesFired>k__BackingField: 1
-  <pircing>k__BackingField: 0
+  <proyectilesFired>k__BackingField: 3
+  <pircing>k__BackingField: 1
   <proyectilesAddedPerRank>k__BackingField: 00000000
   <proyectileExtraDuration>k__BackingField:
   - 0

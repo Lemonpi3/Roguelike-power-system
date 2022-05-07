@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Proyectile : MonoBehaviour
@@ -9,15 +7,15 @@ public class Proyectile : MonoBehaviour
     bool isPircing;
     Rigidbody2D rb;
 
-    public void InitializeProyectile(int _damage,float _lifeSpan,float _speed,float proyectileScale,Transform _target)
+    public void InitializeProyectile(int _damage,float _lifeSpan,float _speed,float proyectileScale,Vector3 _target)
     {
         transform.localScale = Vector3.one * proyectileScale;
         damage = _damage;
         lifeSpan = _lifeSpan;
 
         rb = GetComponent<Rigidbody2D>();
-        Vector2 direction = _target.position - transform.position;
-        rb.AddForce(direction * _speed);
+        Vector2 direction = _target - transform.position;
+        rb.AddForce(direction.normalized * _speed);
     }
 
     public void Update()
@@ -30,7 +28,7 @@ public class Proyectile : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            Debug.Log($"Dealt: {damage} to {other.name}");
+            // Debug.Log($"Dealt: {damage} to {other.name}");
             if(!isPircing)
             {
                 Destroy(gameObject);
