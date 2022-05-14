@@ -1,11 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ConstantPower : Power
 {
     private ConstantPowerData powerData;
     private float tickRate = 1;
     Transform area;
-    bool attack;
+    Collider2D col2D;
+    Stack<Collider2D> hitted= new Stack<Collider2D>();
 
     void Start()
     {
@@ -28,18 +30,21 @@ public class ConstantPower : Power
             transform.localScale = Vector3.one * powerData.areaSizeScale;
             transform.position = powerData.posOffSet;
             transform.rotation = Quaternion.Euler(powerData.rotationOffSet);
+            col2D = GetComponent<Collider2D>();
         }
     }
 
     void Update()
     {
         tickRate -= Time.deltaTime;
-        if(tickRate <= 0)
-        {
-            attack = true;
-            tickRate = powerData.baseAttackSpeed;
-            attack = false;
-        }
+
+        if(tickRate > -.1f) return;
+        
+        tickRate = powerData.baseAttackSpeed;
+
+        if(hitted.Count == 0) return;
+
+        hitted = new Stack<Collider2D>();
     }
 
     public override void RankUP()
@@ -55,9 +60,10 @@ public class ConstantPower : Power
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Enemy" && attack)
+        if(other.tag == "Enemy" && tickRate <= 0 && !hitted.Contains(other))
         {
             Debug.Log($"Dealt: {damage} to {other.name}");
+            hitted.Push(other);
         }
     }
 }
