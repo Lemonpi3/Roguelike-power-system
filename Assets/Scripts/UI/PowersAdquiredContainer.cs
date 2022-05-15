@@ -4,7 +4,8 @@ using System.Collections.Generic;
 public class PowersAdquiredContainer : MonoBehaviour
 {
     [field : SerializeField] public GameObject slotPrefab {get; private set;}
-    [field : SerializeField] public List<Power> powers;
+    [field : SerializeField] public Dictionary<PowerData,PowerAdquiredSlot> powerSlots = new Dictionary<PowerData,PowerAdquiredSlot>();
+    [field : SerializeField] public Dictionary<PowerData,Power> powers = new Dictionary<PowerData,Power>();
 
     private Transform player;
 
@@ -18,18 +19,18 @@ public class PowersAdquiredContainer : MonoBehaviour
     {
         if(power is null){return;}
 
-        foreach(Power _power in powers)
+        if(powers.ContainsKey(power))
         {
-            if(power == _power)
-            {
-                _power.RankUP();
-                return;
-            }
+            powers[power].RankUP();
+            powerSlots[power].UpdateSlot(power,powers[power]);
         }
-    
-        Instantiate(slotPrefab,transform.position,Quaternion.identity,transform).GetComponent<PowerAdquiredSlot>().Initialize(power);
+        
+        PowerAdquiredSlot slot = Instantiate(slotPrefab,transform.position,Quaternion.identity,transform).GetComponent<PowerAdquiredSlot>();
+        slot.Initialize(power);
+        powerSlots.Add(power,slot);
+
         Power powerGO = Instantiate(power.powerPrefab,Vector2.zero,Quaternion.identity,player).GetComponent<Power>();
         powerGO.Initialize(power);
-        powers.Add(powerGO);
+        powers.Add(power,powerGO);
     }
 }

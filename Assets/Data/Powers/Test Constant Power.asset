@@ -22,6 +22,7 @@ MonoBehaviour:
   <basePowerDamage>k__BackingField: 5
   <basePowerModifier>k__BackingField: 0
   <baseAttackSpeed>k__BackingField: 1
+  affectTag: 
   <maxRank>k__BackingField: 1
   <dmgUpPerLevel>k__BackingField: 1
   <dmgUpPerRank>k__BackingField: 00000000
@@ -29,7 +30,7 @@ MonoBehaviour:
   - 0
   <attackSpeedPerRankModifier>k__BackingField:
   - 0
-  <area>k__BackingField: {fileID: 0}
+  <area>k__BackingField: {fileID: 6731619945715380750, guid: b3367f6d91bc5294387853c7dfad0db7, type: 3}
   <areaSizeScale>k__BackingField: 5
   <posOffSet>k__BackingField: {x: 0, y: 0, z: 0}
   <rotationOffSet>k__BackingField: {x: 0, y: 0, z: 0}

@@ -3,7 +3,10 @@ guid: 7f5397c9be2b13b4cbc12dee5a584445
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - <icon>k__BackingField: {instanceID: 0}
+  - <iconBorder>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
+  - <powerPrefab>k__BackingField: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

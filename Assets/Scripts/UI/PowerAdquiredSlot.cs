@@ -1,17 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PowerAdquiredSlot : MonoBehaviour
 {
+    private TextMeshProUGUI powerRank;
+    private PowerData power;
+    private Image icon;
+    
     public void Initialize(PowerData powerData)
     {
-        Image icon = GetComponent<Image>();
+        power = powerData;
+        icon = GetComponent<Image>();
+        powerRank = GetComponentInChildren<TextMeshProUGUI>();
         icon.sprite = powerData.icon;
+        powerRank.text = "1";
     }
 
-    public void UpdateSlot(PowerData powerData)
+    public void UpdateSlot(PowerData powerData, Power _power)
     {
-        Image icon = GetComponent<Image>();
         icon.sprite = powerData.icon;
+        powerRank.text = $"{_power.rank}";
     }
 }

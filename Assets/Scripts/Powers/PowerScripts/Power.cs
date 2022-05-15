@@ -15,6 +15,14 @@ public abstract class Power : MonoBehaviour
         initialized = true;
     }
 
+    protected virtual void Start()
+    {
+        rank = 1;
+        damage = _power.basePowerDamage;
+        attackSpeed = _power.baseAttackSpeed;
+        gameObject.name = _power.powerName;
+    }
+
     public PowerData CheckPower()
     {
         return _power;

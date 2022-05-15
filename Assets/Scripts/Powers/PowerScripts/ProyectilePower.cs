@@ -14,18 +14,24 @@ public class ProyectilePower : Power
 
     [field : SerializeField] public float targetUpdateInterval = 0.3f; //might be better on game manager
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         powerData = (ProyectilePowerData)_power;
+
+        if(powerData.powerType != PowerType.Proyectile)
+        {
+            Debug.LogWarning($"PowerType is not PowerType.Proyectile: {powerData.powerName}"); 
+            return;
+        }
+
         numberOfProyectiles = powerData.proyectilesFired;
-        damage = powerData.basePowerDamage;
-        attackSpeed = powerData.baseAttackSpeed;
+        
         proyectileScale = powerData.proyectileScale;
         proyectileDuration = powerData.proyectileDuration;
         proyectileSpeed = powerData.proyectileSpeed;
-        gameObject.name = _power.powerName;
 
-        rank = 1;
         StartCoroutine(UpdateTarget());
         StartCoroutine(Shoot());
     }

@@ -821,6 +821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIPowerSelectionSlot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8120259244398542075, guid: 92fe2d309e92c5748af84dee56bdf285, type: 3}
+      propertyPath: power
+      value: 
+      objectReference: {fileID: 11400000, guid: cfbc9cc952576ad498b384f4e2aa4013, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92fe2d309e92c5748af84dee56bdf285, type: 3}
 --- !u!1 &1908787066
