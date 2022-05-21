@@ -14,35 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <powerName>k__BackingField: Test Proyectile
   <powerDescription>k__BackingField:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Test Proyectile Power
   <icon>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
   <iconBorder>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
   <powerSelectionColor>k__BackingField: {r: 0.9245283, g: 0.02180491, b: 0.02180491, a: 1}
@@ -50,6 +22,7 @@ MonoBehaviour:
   <basePowerDamage>k__BackingField: 1
   <basePowerModifier>k__BackingField: 0
   <baseAttackSpeed>k__BackingField: 1
+  affectTag: 
   <maxRank>k__BackingField: 1
   <dmgUpPerLevel>k__BackingField: 1
   <dmgUpPerRank>k__BackingField: 00000000

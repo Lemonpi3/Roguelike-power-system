@@ -6,13 +6,15 @@ public class DamageArea : MonoBehaviour
 {
     protected float tickRate = 1;
     protected float counter;
-    protected int damage =1;
+    protected double damage =1;
     protected string affectedTag;
+    protected Player player;
 
     protected Stack<Collider2D> hitted= new Stack<Collider2D>();
 
-    public virtual void UpdateAreaStats(int newDamage, float newTickRate,float newScale,Vector3 newPosOffset=default(Vector3),Vector3 newRotationOffset=default(Vector3),string _affectedTag ="Enemy")
+    public virtual void UpdateAreaStats(double newDamage, float newTickRate,float newScale,Player _player = null,Vector3 newPosOffset=default(Vector3),Vector3 newRotationOffset=default(Vector3),string _affectedTag ="Enemy")
     {
+        player = _player;
         damage = newDamage;
         tickRate = newTickRate;
         transform.localScale = Vector3.one * newScale;
@@ -40,15 +42,20 @@ public class DamageArea : MonoBehaviour
 
         if(affectedTag == "All")
         {
-            Debug.Log($"Dealt: {damage} to {other.name} as All");
+            Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
             hitted.Push(other);
             return;
         }
         if(other.tag == affectedTag)
         {
-            Debug.Log($"Dealt: {damage} to {other.name} as {affectedTag}");
+            Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
             hitted.Push(other);
             return;
         }
+    }
+
+    protected double DealDamage()
+    {
+        return player != null ? damage * player.powerDamageModifier : damage;
     }
 }

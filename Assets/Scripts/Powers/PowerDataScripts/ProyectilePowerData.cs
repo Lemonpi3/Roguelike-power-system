@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Proyectile Power",menuName ="Powers/Proyectile based Power")]
+[CreateAssetMenu(fileName = "New Proyectile Power",menuName ="Powers/New Proyectile Power")]
 
 public class ProyectilePowerData : PowerData
 {

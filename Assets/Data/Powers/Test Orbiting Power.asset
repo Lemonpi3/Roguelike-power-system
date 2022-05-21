@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <powerName>k__BackingField: Test Orbiting Power
   <powerDescription>k__BackingField:
-  - 
+  - Test Orbiting Power
   <icon>k__BackingField: {fileID: 21300000, guid: e9dafd9a9352b364fad0068021d45232, type: 3}
   <iconBorder>k__BackingField: {fileID: 21300000, guid: e19b29eb88fd60d46a5770dd299c9af5, type: 3}
   <powerSelectionColor>k__BackingField: {r: 0.32226774, g: 0.9622642, b: 0.39798373, a: 1}
@@ -33,6 +33,6 @@ MonoBehaviour:
   <orbitingObj>k__BackingField: {fileID: 3662927667835273470, guid: 6e2aec74e0c1bc949b519adfe019d7fe, type: 3}
   <orbitingObjSizeScale>k__BackingField: 0.5
   <rotationDistance>k__BackingField: 2
-  <orbitSpeed>k__BackingField: 100
+  <orbitSpeed>k__BackingField: 0.5
   <numberOfOrbitingObjs>k__BackingField: 3
   <numberExtraObjsPerRank>k__BackingField: 01000000

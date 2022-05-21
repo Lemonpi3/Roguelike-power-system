@@ -18,7 +18,7 @@ public class PowerData : ScriptableObject
     [field : Header("Base Power Configs")]
     
     [field : SerializeField] public GameObject powerPrefab {get; private set;}
-    [field : SerializeField] public int basePowerDamage {get; private set;}
+    [field : SerializeField] public double basePowerDamage {get; private set;}
     [field : SerializeField , Tooltip("For % buffs, how much % you want to modify")] public double basePowerModifier {get; private set;}
     [field : SerializeField, Tooltip("Attack/Buff interval every Xs")] public float baseAttackSpeed {get; private set;}
     [field : SerializeField, Tooltip("Tag that the power will affect/damage (Player,Enemy,All as default Options)")] public string affectTag;

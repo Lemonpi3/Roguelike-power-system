@@ -11,13 +11,13 @@ public class OrbitObject : DamageArea
     {
         if(affectedTag == "All")
         {
-            Debug.Log($"Dealt: {damage} to {other.name} as All");
+            Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
             return;
         }
 
         if(other.tag == affectedTag)
         {
-            Debug.Log($"Dealt: {damage} to {other.name} as {affectedTag}");
+            Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
             return;
         }
     }

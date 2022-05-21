@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5397c9be2b13b4cbc12dee5a584445, type: 3}
   m_Name: TestPower
   m_EditorClassIdentifier: 
-  <powerName>k__BackingField: HEALL
+  <powerName>k__BackingField: Buff Power Test
   <powerDescription>k__BackingField:
-  - TessttHEALL
+  - Test Buff Power
   <icon>k__BackingField: {fileID: 21300000, guid: 77aae8e13c1e2d74e92d2895fc6ac780, type: 3}
   <iconBorder>k__BackingField: {fileID: 21300000, guid: 376bd488a54e09346a3a79ab519f8caf, type: 3}
   <powerSelectionColor>k__BackingField: {r: 0.042052314, g: 0.990566, b: 0.9621217, a: 1}
@@ -22,6 +22,7 @@ MonoBehaviour:
   <basePowerDamage>k__BackingField: 0
   <basePowerModifier>k__BackingField: 0
   <baseAttackSpeed>k__BackingField: 0
+  affectTag: 
   <maxRank>k__BackingField: 0
   <dmgUpPerLevel>k__BackingField: 0
   <dmgUpPerRank>k__BackingField: 

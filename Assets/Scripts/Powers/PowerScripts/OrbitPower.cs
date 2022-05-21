@@ -36,13 +36,13 @@ public class OrbitPower : Power
 
     void Update()
     {
-        transform.RotateAround(transform.position, Vector3.forward,  oribitSpeed);
+        transform.RotateAround(transform.position, Vector3.forward, oribitSpeed);
     }
 
     private void AddNewOrbitObj()
     {
         OrbitObject orbitObject = Instantiate(powerData.orbitingObj,transform.position,Quaternion.identity,transform).GetComponent<OrbitObject>();
-        orbitObject.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale,default,default,powerData.affectTag);
+        orbitObject.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,default,default,powerData.affectTag);
         orbitObjects.Add(orbitObject);
     }
 
@@ -59,6 +59,7 @@ public class OrbitPower : Power
 
         UpdateObjectsPosition();
     }
+    
     private void UpdateObjectsPosition()
     {
         int numObjects = orbitObjects.Count;
@@ -71,6 +72,14 @@ public class OrbitPower : Power
             float x = Mathf.Cos(theta) * orbitDistance;
             float y = Mathf.Sin(theta) * orbitDistance;
             orbitObjects[i].transform.position= new Vector3(x,y, orbitObjects[i].transform.position.z);
+        }
+    }
+
+    public override void UpdatePower()
+    {
+        foreach (OrbitObject obj in orbitObjects)
+        {
+            obj.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,default,default,powerData.affectTag);
         }
     }
 }
