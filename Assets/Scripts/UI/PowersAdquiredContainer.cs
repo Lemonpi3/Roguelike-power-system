@@ -6,12 +6,44 @@ public class PowersAdquiredContainer : MonoBehaviour
     [field : SerializeField] public GameObject slotPrefab {get; private set;}
     [field : SerializeField] public Dictionary<PowerData,PowerAdquiredSlot> powerSlots = new Dictionary<PowerData,PowerAdquiredSlot>();
     [field : SerializeField] public Dictionary<PowerData,Power> powers = new Dictionary<PowerData,Power>();
-
+    [field : SerializeField] public PowerSelectionSlot[] selectionSlots {get;private set;}
+    [field : SerializeField] public int numberOfPrioritySlots {get;private set;}
     private Transform player;
+    PowerRandomizer powerRandomizer;
+    [SerializeField] GameObject powerWindow;
 
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        powerRandomizer = GetComponent<PowerRandomizer>();
+        RollPowers();
+    }
+
+    public void RollPowers()
+    {
+        powerWindow.SetActive(true);
+        //Set Priority Slots.
+        for (int i = 0; i < numberOfPrioritySlots; i++)
+        {
+            PowerData powerData = powerRandomizer.GetPriortyPower();
+            int rank = 0;
+            if (powers.ContainsKey(powerData)) 
+            {
+               rank = powers[powerData].rank;
+            }
+            selectionSlots[i].UpdatePowerSlot(powerData,rank);
+        }
+        //Set Random Slots
+        PowerData[] powerDatas = powerRandomizer.RollRandomPowers(selectionSlots.Length-numberOfPrioritySlots);
+        for (int i = numberOfPrioritySlots; i < selectionSlots.Length; i++)
+        {
+            int rank = 0;
+            if (powers.ContainsKey(powerDatas[i-numberOfPrioritySlots])) 
+            {
+               rank = powers[powerDatas[i-numberOfPrioritySlots]].rank;
+            }
+            selectionSlots[i].UpdatePowerSlot(powerDatas[i-numberOfPrioritySlots],rank);
+        }
     }
 
     //1# Checks if the power is already learned.If not, isntantiates the icon and power , else ranks it up.

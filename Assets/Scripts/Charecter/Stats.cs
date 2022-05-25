@@ -24,10 +24,11 @@ public class Stats : MonoBehaviour
         moveSpeed = moveSpeedDefault > 0 ? moveSpeedDefault * (float)moveSpeedModifier : 1;
     }
 
-    public virtual void TakeDamage(double amount)
+    public virtual void TakeDamage(double amount, Player player=null)
     {
         hpCurrent =- amount;
-        if(hpCurrent <=0){ Die();}
+        if(hpCurrent > 0) { return;}
+        Die();
     }
 
     public virtual void Heal(double amount)
@@ -35,7 +36,7 @@ public class Stats : MonoBehaviour
         hpCurrent = hpCurrent+amount > hpMax ? hpMax : hpCurrent+amount;
     }
 
-    public virtual void Die()
+    protected virtual void Die(Player player = null)
     {
         Destroy(gameObject);
     }

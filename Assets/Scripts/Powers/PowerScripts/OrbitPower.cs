@@ -36,7 +36,7 @@ public class OrbitPower : Power
 
     void Update()
     {
-        transform.RotateAround(transform.position, Vector3.forward, oribitSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, oribitSpeed);
     }
 
     private void AddNewOrbitObj()

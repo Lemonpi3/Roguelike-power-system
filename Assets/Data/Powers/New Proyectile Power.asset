@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f77aa61be8a87643b8fb267f5519fbe, type: 3}
+  m_Name: New Proyectile Power
+  m_EditorClassIdentifier: 
+  <powerName>k__BackingField: 
+  <powerDescription>k__BackingField:
+  - 
+  <icon>k__BackingField: {fileID: 0}
+  <iconBorder>k__BackingField: {fileID: 0}
+  <powerSelectionColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  <powerPrefab>k__BackingField: {fileID: 8929177868852266760, guid: 3d8a2f3cb6192ae4e8cfff383f5c2ef5, type: 3}
+  <basePowerDamage>k__BackingField: 0
+  <basePowerModifier>k__BackingField: 0
+  <baseAttackSpeed>k__BackingField: 0
+  affectTag: 
+  <maxRank>k__BackingField: 0
+  <dmgUpPerLevel>k__BackingField: 0
+  <dmgUpPerRank>k__BackingField: 00000000
+  <powerModifierPerRank>k__BackingField:
+  - 0
+  <attackSpeedPerRankModifier>k__BackingField:
+  - 0
+  <proyectile>k__BackingField: {fileID: 7562477152680260775, guid: 4bf9dc530426f2f4fabb968eb885de83, type: 3}
+  <proyectileSpeed>k__BackingField: 0
+  <proyectileDuration>k__BackingField: 0
+  <proyectileScale>k__BackingField: 0
+  <proyectilesFired>k__BackingField: 0
+  <pircing>k__BackingField: 0
+  <proyectilesAddedPerRank>k__BackingField: 00000000
+  <proyectileExtraDuration>k__BackingField:
+  - 0

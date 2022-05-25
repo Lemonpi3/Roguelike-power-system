@@ -42,12 +42,14 @@ public class DamageArea : MonoBehaviour
 
         if(affectedTag == "All")
         {
+            other.GetComponent<Enemy>().TakeDamage(DealDamage(),player);
             Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
             hitted.Push(other);
             return;
         }
         if(other.tag == affectedTag)
         {
+            other.GetComponent<Enemy>().TakeDamage(DealDamage(),player);
             Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
             hitted.Push(other);
             return;

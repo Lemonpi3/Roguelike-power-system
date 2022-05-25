@@ -30,6 +30,8 @@ public class Proyectile : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
+            other.GetComponent<Enemy>().TakeDamage(damage,player);
+            
             if(!isPircing)
             {
                 Destroy(gameObject);

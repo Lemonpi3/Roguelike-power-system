@@ -12,12 +12,14 @@ public class OrbitObject : DamageArea
         if(affectedTag == "All")
         {
             Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
+            other.GetComponent<Stats>().TakeDamage(damage,player);
             return;
         }
 
         if(other.tag == affectedTag)
         {
             Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
+            other.GetComponent<Stats>().TakeDamage(damage,player);
             return;
         }
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7570756416485940961}
   - component: {fileID: 7570756416485940959}
+  - component: {fileID: 3753409218569129086}
   m_Layer: 0
   m_Name: Constant Power AoE
   m_TagString: Untagged
@@ -44,3 +45,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <rank>k__BackingField: 0
+--- !u!1818360608 &3753409218569129086
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570756416485940956}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []

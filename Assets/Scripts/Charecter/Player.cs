@@ -9,11 +9,16 @@ public class Player : Stats
     [field : SerializeField] public double powerSizeModifier {get; private set;}
     [field : SerializeField] public double powerAmountModifier {get; private set;}
     [field : SerializeField] public double hpRegenPercent {get; private set;}
+    
+    [field : SerializeField] public int level {get; private set;}
+    [field : SerializeField] public int xpToLevel {get; private set;}
+    [field : SerializeField] public int xpCurrent {get; private set;}
 
     void Start()
     {
         InitializeStats();
         StartCoroutine(HpRegen());
+        GainXP(1);
     }
     
     void Update()
@@ -80,6 +85,21 @@ public class Player : Stats
         {
             Heal((hpCurrent*hpRegenPercent));
             yield return new WaitForSeconds(1);
+        }
+    }
+
+    public virtual void GainXP(int amount)
+    {
+        xpCurrent += amount;
+        if (xpCurrent >= xpToLevel)
+        {
+            int remanent = xpCurrent - xpToLevel;
+            level++;
+            xpToLevel=(int)(0.5*level) <= 0 ? 1 : (int)(0.5*level);
+            if(remanent > 0)
+            {
+                GainXP(remanent);
+            }
         }
     }
 }
