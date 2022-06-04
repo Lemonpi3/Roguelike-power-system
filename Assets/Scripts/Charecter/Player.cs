@@ -13,12 +13,13 @@ public class Player : Stats
     [field : SerializeField] public int level {get; private set;}
     [field : SerializeField] public int xpToLevel {get; private set;}
     [field : SerializeField] public int xpCurrent {get; private set;}
+    [field : SerializeField] public double xpGainModifier {get; private set;}
 
     void Start()
     {
         InitializeStats();
-        StartCoroutine(HpRegen());
         GainXP(1);
+        StartCoroutine(HpRegen());
     }
     
     void Update()
@@ -51,6 +52,7 @@ public class Player : Stats
         hpRegenPercent = playerClass.hpRegenPercent < 0 ? 0 : playerClass.hpRegenPercent;
 
         base.InitializeStats();
+        initialazed = true;
     }
 
     //Modifiers Changes
@@ -79,6 +81,11 @@ public class Player : Stats
         hpRegenPercent = (hpRegenPercent+modifier) < 0 ? 0: hpRegenPercent+modifier;
     }
 
+    public virtual void UpdateXPGain(double modifier)
+    {
+        xpGainModifier = (xpGainModifier+modifier);
+    }
+
     protected IEnumerator HpRegen()
     {
         while(true)
@@ -90,16 +97,19 @@ public class Player : Stats
 
     public virtual void GainXP(int amount)
     {
-        xpCurrent += amount;
+        xpCurrent += (amount + (int)(amount * xpGainModifier));
+        int remanent = xpCurrent - xpToLevel;
+    
         if (xpCurrent >= xpToLevel)
         {
-            int remanent = xpCurrent - xpToLevel;
             level++;
+            xpCurrent = 0;
             xpToLevel=(int)(0.5*level) <= 0 ? 1 : (int)(0.5*level);
-            if(remanent > 0)
-            {
-                GainXP(remanent);
-            }
+        }
+        if(remanent > 0)
+        {
+            GainXP(remanent);
         }
     }
+
 }

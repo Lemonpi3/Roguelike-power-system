@@ -27,30 +27,29 @@ public class DamageArea : MonoBehaviour
     {
         counter -= Time.deltaTime;
 
-        if(counter > -.1f) return;
+        if(counter > 0) return;
         
         counter = tickRate;
 
         if(hitted.Count == 0) return;
-
         hitted = new Stack<Collider2D>();
     }
 
     protected virtual void OnTriggerStay2D(Collider2D other)
     {
-        if (tickRate > 0 || hitted.Contains(other)) return;
+        if (hitted.Contains(other)) return;
 
         if(affectedTag == "All")
         {
             other.GetComponent<Enemy>().TakeDamage(DealDamage(),player);
-            Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
+            // Debug.Log($"Dealt: {DealDamage()} to {other.name} as All");
             hitted.Push(other);
             return;
         }
         if(other.tag == affectedTag)
         {
             other.GetComponent<Enemy>().TakeDamage(DealDamage(),player);
-            Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
+            // Debug.Log($"Dealt: {DealDamage()} to {other.name} as {affectedTag}");
             hitted.Push(other);
             return;
         }

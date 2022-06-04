@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2638401211628025825}
   - component: {fileID: 6370726422203505295}
   - component: {fileID: 2535472630701299223}
-  - component: {fileID: -9205225826109636322}
   m_Layer: 0
   m_Name: AoE
   m_TagString: Untagged
@@ -105,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6370726422203505295
 CircleCollider2D:
@@ -135,20 +134,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f93d57d1e80c8646b8a20e805595527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1818360608 &-9205225826109636322
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6731619945715380750}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources: []

@@ -16,7 +16,7 @@ public class PowerSelectionSlot : MonoBehaviour
     //TEMP
     void Start()
     {
-        UpdatePowerSlot(power,0);
+        // UpdatePowerSlot(power,0);
         powersAdquiredContainer = FindObjectOfType<PowersAdquiredContainer>();
     }
 
@@ -37,6 +37,7 @@ public class PowerSelectionSlot : MonoBehaviour
     {
         Debug.Log(powerName.text + " Selected");
         powersAdquiredContainer.AddPower(power);
+        Time.timeScale = 1; //resets timeScale
         transform.parent.gameObject.SetActive(false);
     }
 }

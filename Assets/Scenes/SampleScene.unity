@@ -241,8 +241,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fef08b193dc3cb4d84050f577e55d57, type: 2}
   - {fileID: 11400000, guid: cfbc9cc952576ad498b384f4e2aa4013, type: 2}
   - {fileID: 11400000, guid: 9d8c34246037305468325b65d97e6d44, type: 2}
-  - {fileID: 11400000, guid: 310f80151007b0b4ba01ce3a802ca87f, type: 2}
-  - {fileID: 11400000, guid: 262f3fee9eacc6f4c9419e2a650c6905, type: 2}
+  - {fileID: 11400000, guid: 90e39952ce68f4a4c9af4530bf9baaef, type: 2}
 --- !u!114 &136391348 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8120259244398542075, guid: 92fe2d309e92c5748af84dee56bdf285, type: 3}
@@ -1032,7 +1031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931776235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.11, y: 2, z: 0}
+  m_LocalPosition: {x: 8.76, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1076,6 +1075,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9ede168ab113b46a43cbae12b3950f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <moveSpeedDefault>k__BackingField: 0
+  <hpDefault>k__BackingField: 0
+  <hpMax>k__BackingField: 0
+  <hpCurrent>k__BackingField: 0
+  <moveSpeed>k__BackingField: 0
+  <moveSpeedModifier>k__BackingField: 0
+  <hpModifier>k__BackingField: 0
+  enemyData: {fileID: 11400000, guid: 95258426e210e934c8936a402fa95f56, type: 2}
 --- !u!58 &1931776240
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1128,7 +1135,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1932482186
 GameObject:
@@ -1407,6 +1414,7 @@ MonoBehaviour:
   <level>k__BackingField: 0
   <xpToLevel>k__BackingField: 0
   <xpCurrent>k__BackingField: 0
+  <xpGainModifier>k__BackingField: 0
 --- !u!114 &2088286027
 MonoBehaviour:
   m_ObjectHideFlags: 0

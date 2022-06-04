@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da39a5dc289c1954e9e01f70a3c2b016, type: 3}
+  m_Name: Test Buff Power Const
+  m_EditorClassIdentifier: 
+  <powerName>k__BackingField: Test Buff Power
+  <powerDescription>k__BackingField:
+  - +10%HP to all charecters
+  <icon>k__BackingField: {fileID: 21300000, guid: 9f1e49677f0bc684fae24a196077bc85, type: 3}
+  <iconBorder>k__BackingField: {fileID: 21300000, guid: 77aae8e13c1e2d74e92d2895fc6ac780, type: 3}
+  <powerSelectionColor>k__BackingField: {r: 0.03901875, g: 1, b: 0, a: 0}
+  <powerPrefab>k__BackingField: {fileID: 1499318612691424660, guid: dd41b7d9ef04e2d4f84a68bc579369b5, type: 3}
+  <basePowerDamage>k__BackingField: 0
+  <basePowerModifier>k__BackingField: 0.1
+  <baseAttackSpeed>k__BackingField: 0
+  affectTag: All
+  <maxRank>k__BackingField: 1
+  <dmgUpPerLevel>k__BackingField: 0
+  <dmgUpPerRank>k__BackingField: 00000000
+  <powerModifierPerRank>k__BackingField:
+  - 0
+  <attackSpeedPerRankModifier>k__BackingField:
+  - 0
+  <statsToModify>k__BackingField: 00000000
+  <affectsCharacterTypes>k__BackingField: 04000000
+  <temporal>k__BackingField: 0
+  <buffTemporalDuration>k__BackingField: 0

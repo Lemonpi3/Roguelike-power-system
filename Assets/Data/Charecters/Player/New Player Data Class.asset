@@ -16,11 +16,11 @@ MonoBehaviour:
   <charecterDescription>k__BackingField: 
   <charecterSprite>k__BackingField: {fileID: 0}
   <characterType>k__BackingField: 0
-  <hp>k__BackingField: 1
+  <hp>k__BackingField: 10
   <moveSpeed>k__BackingField: 10
   <moveSpeedModifier>k__BackingField: 1
   <hpModifier>k__BackingField: 1
-  <hpRegenPercent>k__BackingField: 0
+  <hpRegenPercent>k__BackingField: 0.1
   <powerDamageModifier>k__BackingField: 1
   <powerCooldownModifier>k__BackingField: 1
   <powerSizeModifier>k__BackingField: 2

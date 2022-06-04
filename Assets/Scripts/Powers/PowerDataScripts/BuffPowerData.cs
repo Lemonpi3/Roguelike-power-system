@@ -11,4 +11,7 @@ public class BuffPowerData : PowerData
 
     [field : SerializeField] public bool temporal{get; private set;}
     [field : SerializeField] public float buffTemporalDuration{get; private set;}
+
+    [field : SerializeField] public readonly PowerType powerType = PowerType.Buff;
+
 }

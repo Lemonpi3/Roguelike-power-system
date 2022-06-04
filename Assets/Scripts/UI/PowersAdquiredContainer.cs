@@ -22,6 +22,8 @@ public class PowersAdquiredContainer : MonoBehaviour
     public void RollPowers()
     {
         powerWindow.SetActive(true);
+        Time.timeScale = 0; //pauses game
+        
         //Set Priority Slots.
         for (int i = 0; i < numberOfPrioritySlots; i++)
         {

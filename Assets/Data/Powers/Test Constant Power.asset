@@ -19,10 +19,10 @@ MonoBehaviour:
   <iconBorder>k__BackingField: {fileID: 21300000, guid: e4f0523b66f367848af29d8fc56a4c7e, type: 3}
   <powerSelectionColor>k__BackingField: {r: 0.9811321, g: 0.5507298, b: 0.81644934, a: 0.92156863}
   <powerPrefab>k__BackingField: {fileID: 7570756416485940956, guid: 767a5a3eafa18c04ab5a7cfec9434b55, type: 3}
-  <basePowerDamage>k__BackingField: 5
+  <basePowerDamage>k__BackingField: 1
   <basePowerModifier>k__BackingField: 0
   <baseAttackSpeed>k__BackingField: 1
-  affectTag: 
+  affectTag: Enemy
   <maxRank>k__BackingField: 1
   <dmgUpPerLevel>k__BackingField: 1
   <dmgUpPerRank>k__BackingField: 00000000
