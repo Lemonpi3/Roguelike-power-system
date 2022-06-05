@@ -27,9 +27,9 @@ public class Stats : MonoBehaviour
     public virtual void TakeDamage(double amount, Player player=null)
     {
         hpCurrent -= amount;
-        if(hpCurrent < 0) 
+        if(hpCurrent > 0) 
         { 
-            Die();
+            Die(player);
         }
     }
 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab6c857df50b4c4f93dfe44956da94a, type: 3}
+  m_Name: Enemy Spawner Data
+  m_EditorClassIdentifier: 
+  <enemiesToSpawnEarly>k__BackingField:
+  - {fileID: 11400000, guid: 95258426e210e934c8936a402fa95f56, type: 2}
+  <enemiesToSpawnMid>k__BackingField:
+  - {fileID: 11400000, guid: 7a53a3689667cdc46a7c913cb586a6d5, type: 2}
+  <enemiesToSpawnLate>k__BackingField:
+  - {fileID: 11400000, guid: 464411266b6efd14e99f632b8f4e7095, type: 2}
+  <bossesToSpawn>k__BackingField: []
+  <spawnRate>k__BackingField: 0
+  <midGameTime>k__BackingField: 5
+  <lateGameTime>k__BackingField: 10
+  <bossSpawnTime>k__BackingField: 0
+  <bossSpawnerType>k__BackingField: 0

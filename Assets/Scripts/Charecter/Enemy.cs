@@ -20,20 +20,19 @@ public class Enemy : Stats
         moveSpeedDefault = enemyData.moveSpeed <= 0 ? 1 : enemyData.moveSpeed;
         hpDefault = enemyData.hp <= 0 ? 1 : enemyData.hp;
         
-        hpModifier = (enemyData.hpModifier + GameManager.enemyHPModifier) < 0 ? 1 : (enemyData.hpModifier + GameManager.enemyHPModifier);
-        moveSpeedModifier = (enemyData.moveSpeedModifier + GameManager.enemySpeedModifier) < 0 ? 1 : (enemyData.moveSpeedModifier + GameManager.enemySpeedModifier);
+        hpModifier = (enemyData.hpModifier + GameManager.instance.enemyHPModifier) < 0 ? 1 : (enemyData.hpModifier + GameManager.instance.enemyHPModifier);
+        moveSpeedModifier = (enemyData.moveSpeedModifier + GameManager.instance.enemySpeedModifier) < 0 ? 1 : (enemyData.moveSpeedModifier + GameManager.instance.enemySpeedModifier);
         InitializeStats();
 
         damage = enemyData.damage;
         xp=enemyData.xpDrop;
         initialazed = true;
+        GameManager.instance.enemyCount += 1;
     }
 
     void Start()
     {
-        Initialize(enemyData); //TEST
         target = GameObject.FindWithTag("Player").transform;
-        
     }
 
     void Update()
@@ -61,6 +60,17 @@ public class Enemy : Stats
             player.TakeDamage(damage);
         }
     }
-    
-    
+
+    protected override void Die(Player player = null)
+    {
+        GameManager.instance.enemyCount -= 1;
+        
+        if(player)
+        {
+            player.GainXP(xp);
+        }
+
+        base.Die(player);
+    }
+
 }

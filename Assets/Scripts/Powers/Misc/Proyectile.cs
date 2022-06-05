@@ -34,7 +34,8 @@ public class Proyectile : MonoBehaviour
             
             if(!isPircing)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                Destroy(gameObject,0.5f);
             }
         }
     }

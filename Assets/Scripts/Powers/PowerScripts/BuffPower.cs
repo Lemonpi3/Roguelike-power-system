@@ -38,7 +38,7 @@ public class BuffPower : Power
         if(!temporal){return;}
 
         buffTemporalDuration-=Time.deltaTime;
-        
+
         if(buffTemporalDuration<=0)
         {
             Modify(-amountToModify);
@@ -75,10 +75,10 @@ public class BuffPower : Power
             switch (_stats[i])
             {
                 case (StatsTypes.HP):
-                    GameManager.ModifyEnemy_HPModifier(amount);
+                    GameManager.instance.ModifyEnemy_HPModifier(amount);
                     break;
                 case (StatsTypes.Speed):
-                    GameManager.ModifyEnemy_SpeedModifier(amount);
+                    GameManager.instance.ModifyEnemy_SpeedModifier(amount);
                     break;
                 default:
                     Debug.Log("Not a vaild stat to modify");

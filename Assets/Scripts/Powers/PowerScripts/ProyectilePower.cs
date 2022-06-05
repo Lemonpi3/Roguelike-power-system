@@ -76,15 +76,17 @@ public class ProyectilePower : Power
         while(true)
         {
             int proyectiles = Mathf.RoundToInt((float)(numberOfProyectiles*player.powerAmountModifier));
-            if(target != null)
-            {
+            
                 for (int i = 0; i < proyectiles; i++)
                 {
-                    Proyectile proyectile = Instantiate(powerData.proyectile,transform.position,Quaternion.identity,transform).GetComponent<Proyectile>();
-                    proyectile.InitializeProyectile(damage,proyectileDuration,proyectileSpeed,proyectileScale,target.transform.position, player);
-                    yield return new WaitForSeconds(0.15f);
-                }
-            }
+                    if(target != null)
+                    {
+                        Proyectile proyectile = Instantiate(powerData.proyectile,transform.position,Quaternion.identity,transform).GetComponent<Proyectile>();
+                        proyectile.InitializeProyectile(damage,proyectileDuration,proyectileSpeed,proyectileScale,target.transform.position, player);
+                        yield return new WaitForSeconds(0.15f);
+                    }
+                 }
+                 
             yield return new WaitForSeconds(attackSpeed * (float)player.powerCooldownModifier);
         }
     }
