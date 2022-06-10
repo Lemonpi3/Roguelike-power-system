@@ -15,7 +15,7 @@ orbit speed and orbit distance from player can be calculated.
 ### Temporal and Permanent Power categories:
 A buff that affects the players and/or enemies stats or the enviroment. Might be merged into a unique category in the future
 
-## Things done:
+## Progress:
 
 ### UI:
 * Power Selection :heavy_check_mark:
@@ -27,5 +27,12 @@ A buff that affects the players and/or enemies stats or the enviroment. Might be
 * Proyectile Power Class :heavy_check_mark:
 * Static AoE(or Constant) Power Class :heavy_check_mark:
 * Orbit Power Class :heavy_check_mark:
-* Permanent/Temporal Buff Power Class :construction:
-* Power Randomizer for Power Selection :construction:
+* Permanent/Temporal Buff Power Class :heavy_check_mark:
+* Smart Power Randomizer for Power Selection :construction:
+* Leveling up system :construction:
+
+### Charecters
+* Progressive enemy spawner (changes what and how much to spawn overtime) :heavy_check_mark: (still has some small bugs with the spawn cap)
+* Some basic enemies :construction:
+* Mini Bosses - Bosses :construction:
+* Player Class :construction:
