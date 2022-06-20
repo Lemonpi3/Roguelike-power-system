@@ -16,6 +16,7 @@ public class Player : Character
     [field : SerializeField] public double xpGainModifier {get; private set;}
 
     XPBar xpBar;
+    HPBar hpBar;
     PowersAdquiredContainer powerContainer;
 
     void Start()
@@ -23,17 +24,14 @@ public class Player : Character
         xpToLevel = 1;
         InitializeStats();
         xpBar = FindObjectOfType<XPBar>();
+        hpBar = FindObjectOfType<HPBar>();
+
         powerContainer = FindObjectOfType<PowersAdquiredContainer>();
 
         GainXP(1);
         StartCoroutine(HpRegen());
     }
     
-    void Update()
-    {
-        
-    }
-
     //<---Initializers--->
 
     //For Setting class throght scripting
@@ -122,6 +120,12 @@ public class Player : Character
             GainXP(remanent);
         }
         xpBar.UpdateBar(xpCurrent,xpToLevel);
+    }
+
+    public override void TakeDamage(double amount, Player player = null)
+    {
+        base.TakeDamage(amount, player);
+        hpBar.UpdateBar((float)hpCurrent,(float)hpMax);
     }
 
 }

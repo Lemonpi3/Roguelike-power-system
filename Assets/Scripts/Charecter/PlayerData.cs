@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Player Data Class", menuName ="New Charecter/New Player Class")]
 public class PlayerData : CharecterData
 {
+
+    [field : SerializeField] public PowerData startingPower {get; private set;}
+    
     [field : SerializeField, Tooltip("% Hp regen per second")] public double hpRegenPercent {get; private set;}
 
     [field : Header("Initial Power Modifier Values")]

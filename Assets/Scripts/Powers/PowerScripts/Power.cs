@@ -49,7 +49,6 @@ public abstract class Power : MonoBehaviour
             }
         }
         attackSpeed = _power.baseAttackSpeed / value;
-        Debug.Log("rank: "+rank);
     }
 
     public virtual void UpdatePower()

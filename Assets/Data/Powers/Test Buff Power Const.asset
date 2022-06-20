@@ -23,6 +23,7 @@ MonoBehaviour:
   <basePowerModifier>k__BackingField: 0.1
   <baseAttackSpeed>k__BackingField: 0
   affectTag: All
+  <dropWeight>k__BackingField: 1
   <maxRank>k__BackingField: 1
   <dmgUpPerLevel>k__BackingField: 0
   <dmgUpPerRank>k__BackingField: 00000000

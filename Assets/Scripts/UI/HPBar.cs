@@ -1,7 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class XPBar : StatusBar
+public class HPBar : StatusBar
 {
     public override void UpdateBar(float currentAmount, float maxAmount)
     {

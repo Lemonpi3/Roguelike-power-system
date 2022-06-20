@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
         }else instance = this;
     }
 
+    //Fps limiter
+    void Start(){
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
+
     [field : SerializeField] public double enemyHPModifier {get;private set;}
     [field : SerializeField] public double enemySpeedModifier {get;private set;}
     [field : SerializeField] public double enemySpawnSpeedModifier {get;private set;}

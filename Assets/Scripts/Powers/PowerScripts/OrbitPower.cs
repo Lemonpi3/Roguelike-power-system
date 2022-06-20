@@ -36,7 +36,7 @@ public class OrbitPower : Power
 
     void Update()
     {
-        transform.RotateAround(transform.parent.position, Vector3.forward, oribitSpeed);
+        transform.RotateAround(transform.parent.position, Vector3.forward, oribitSpeed + Time.deltaTime);
     }
 
     private void AddNewOrbitObj()
@@ -50,7 +50,7 @@ public class OrbitPower : Power
     {
         base.RankUP();
 
-        int numOfNewObjs = powerData.numberExtraObjsPerRank.Length >= rank-2 ? powerData.numberExtraObjsPerRank[rank-2] : powerData.numberExtraObjsPerRank[powerData.numberExtraObjsPerRank.Length-1];
+        int numOfNewObjs = powerData.numberExtraObjsPerRank.Length > rank ? powerData.numberExtraObjsPerRank[rank] : powerData.numberExtraObjsPerRank[powerData.numberExtraObjsPerRank.Length-1];
         
         for (int i = 0; i < numOfNewObjs; i++)
         {
@@ -79,7 +79,7 @@ public class OrbitPower : Power
     {
         foreach (OrbitObject obj in orbitObjects)
         {
-            obj.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,Vector3.zero,Vector3.zero,powerData.affectTag);
+            obj.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,default,default,powerData.affectTag);
         }
     }
 }

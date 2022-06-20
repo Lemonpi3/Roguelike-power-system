@@ -27,7 +27,6 @@ public class ConstantPower : Power
     public override void RankUP()
     {
         base.RankUP();
-        // Debug.Log(powerData.areaSizeRankIncrease.Length+"rank: " + rank);
         size = powerData.areaSizeRankIncrease.Length > rank ? size += powerData.areaSizeRankIncrease[rank] : size += powerData.areaSizeRankIncrease[powerData.areaSizeRankIncrease.Length-1];
         UpdateArea();
     }

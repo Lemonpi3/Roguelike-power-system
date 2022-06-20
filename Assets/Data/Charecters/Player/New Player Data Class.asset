@@ -20,6 +20,7 @@ MonoBehaviour:
   <moveSpeed>k__BackingField: 10
   <moveSpeedModifier>k__BackingField: 1
   <hpModifier>k__BackingField: 1
+  <startingPower>k__BackingField: {fileID: 11400000, guid: cfbc9cc952576ad498b384f4e2aa4013, type: 2}
   <hpRegenPercent>k__BackingField: 0.1
   <powerDamageModifier>k__BackingField: 1
   <powerCooldownModifier>k__BackingField: 1

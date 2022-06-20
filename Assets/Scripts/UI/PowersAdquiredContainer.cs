@@ -19,6 +19,7 @@ public class PowersAdquiredContainer : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform; // ??? Change in future
         powerRandomizer = GetComponent<PowerRandomizer>();
+        AddPower(player.GetComponent<Player>().playerClass.startingPower);
         RollPowers();
     }
 
@@ -27,27 +28,22 @@ public class PowersAdquiredContainer : MonoBehaviour
         powerWindow.SetActive(true);
         Time.timeScale = 0; //pauses game
         
-        //Set Priority Slots.
-        for (int i = 0; i < numberOfPrioritySlots; i++)
+        //Roll powers;
+        PowerData[] powerDatas = powerRandomizer.GetPowers(selectionSlots.Length,numberOfPrioritySlots);
+        for (int i = 0; i < selectionSlots.Length; i++)
         {
-            PowerData powerData = powerRandomizer.GetPriortyPower();
-            int rank = 0;
-            if (powers.ContainsKey(powerData)) 
-            {
-               rank = powers[powerData].rank;
+            if(powerDatas[i]==null){
+                selectionSlots[i].gameObject.SetActive(false);
+                continue;
             }
-            selectionSlots[i].UpdatePowerSlot(powerData,rank);
-        }
-        //Set Random Slots
-        PowerData[] powerDatas = powerRandomizer.RollRandomPowers(selectionSlots.Length-numberOfPrioritySlots);
-        for (int i = numberOfPrioritySlots; i < selectionSlots.Length; i++)
-        {
+
             int rank = 0;
-            if (powers.ContainsKey(powerDatas[i-numberOfPrioritySlots])) 
+            if (powers.ContainsKey(powerDatas[i])) 
             {
-               rank = powers[powerDatas[i-numberOfPrioritySlots]].rank;
+               rank = powers[powerDatas[i]].rank;
             }
-            selectionSlots[i].UpdatePowerSlot(powerDatas[i-numberOfPrioritySlots],rank);
+            selectionSlots[i].gameObject.SetActive(true);
+            selectionSlots[i].UpdatePowerSlot(powerDatas[i],rank);
         }
     }
 
@@ -68,7 +64,7 @@ public class PowersAdquiredContainer : MonoBehaviour
         slot.Initialize(power);
         powerSlots.Add(power,slot);
 
-        Power powerGO = Instantiate(power.powerPrefab,Vector3.zero,Quaternion.identity,player).GetComponent<Power>();
+        Power powerGO = Instantiate(power.powerPrefab,player.position,Quaternion.identity,player.Find("Powers")).GetComponent<Power>();
         powerGO.Initialize(power);
         powers.Add(power,powerGO);
     }
