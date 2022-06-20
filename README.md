@@ -21,19 +21,23 @@ A buff that affects the players and/or enemies stats or the enviroment. (requier
 * Power Selection :heavy_check_mark:
 * Adquired Powers display  :heavy_check_mark:
 * XP Bar :heavy_check_mark:
+* HP Bar :heavy_check_mark:
 
-### Power System
+### Power System:
 * Base Power class :heavy_check_mark:
 * Base Powers Data classes :heavy_check_mark:
 * Proyectile Power Class :heavy_check_mark:
 * Static AoE(or Constant) Power Class :heavy_check_mark:
 * Orbit Power Class :heavy_check_mark:
 * Permanent/Temporal Buff Power Class :heavy_check_mark:
-* Smart Power Randomizer for Power Selection :construction:
+* Smart Power Randomizer for Power Selection :heavy_check_mark:
 * Leveling up system :heavy_check_mark:
 
 ## Demo
-### Charecters
+### Charecters:
 * Progressive enemy spawner (changes what and how much to spawn overtime) :heavy_check_mark: (still has some small bugs with the spawn cap)
 * Some basic enemies :heavy_check_mark:
-* Player Class :heavy_check_mark: (Almost finished)
+* Player Class :heavy_check_mark:
+
+## To Do:
+The system its finished. I might refactor and clean the code in the future.
