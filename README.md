@@ -1,8 +1,9 @@
-<h2>Roguelike-power-system</h2>
+<h1>Roguelike-power-system</h1>
 Generic roguelike powers system for 2D games but can be easily adapted to 3D that has lots of customization to create limitless powers using scriptable objects. Includes a small minigame demo.
 
-## Structure
+# Structure
 
+## Powers:
 I divided the powers into 4 categories:
 
 ###  Proyectile based:
@@ -15,7 +16,26 @@ orbit speed and orbit distance from player can be calculated.
 ### Temporal and Permanent Power categories:
 A buff that affects the players and/or enemies stats or the enviroment. (requieres a stat system)
 
-## Progress:
+## How to set it up:
+Just Drag the PowerSystem prefab into the scene and fill it as so:
+ 
+<img src= "/Assets/Misc/PowerSystemPrefabPic.jpg">
+
+### Powers Adquired Container:
+Its in charge of the UI part of the system.
+* Slot Prefab:
+   Its the prefab gives the visual feedback to the player to track which powers they have.
+   Must be filled with PowerSlot prefab.
+* Selection Slots:
+  This are the UI Buttons where the player gets to choose the powers, you can find them in the UIPowerSelectionSlot prefab.
+* Power Window:
+  This its the parent object to the power selection slots.
+* Number of priority slots: the amount of slots that will be dedicated to previusly adquired powers (so the player has a high chance to rank them up).
+
+### Power Randomizer:
+Picks the Powers from All Powers , the Max duplicate Rerolls its there to prevent an infinite loop in the selection (stops it from looping infinetly if there are duplicates in the power selection window).
+
+# Progress:
 
 ### UI:
 * Power Selection :heavy_check_mark:
@@ -39,5 +59,5 @@ A buff that affects the players and/or enemies stats or the enviroment. (requier
 * Some basic enemies :heavy_check_mark:
 * Player Class :heavy_check_mark:
 
-## To Do:
+# To Do:
 The system its finished. I might refactor and clean the code in the future.
