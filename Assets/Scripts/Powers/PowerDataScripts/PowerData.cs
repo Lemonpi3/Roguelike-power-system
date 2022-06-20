@@ -38,6 +38,8 @@ public class PowerData : ScriptableObject
 
     [field : SerializeField, Tooltip("divides base attack speed by the corresponding item on the list starting at rank 2 (indx 0 of this list)")] 
     public float[] attackSpeedPerRankModifier {get; private set;}
+
+    public virtual void UsePower() {}
 }
 public enum PowerType {Proyectile, Constant, Orbiting, Buff}
 public enum StatsTypes {HP, Regen , XPgain, Damage, Amount, Speed, Cooldown, Size}

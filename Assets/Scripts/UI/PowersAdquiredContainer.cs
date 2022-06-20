@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+// This is the power slot container will need refactor in future
 public class PowersAdquiredContainer : MonoBehaviour
 {
     [field : SerializeField] public GameObject slotPrefab {get; private set;}
@@ -8,13 +9,15 @@ public class PowersAdquiredContainer : MonoBehaviour
     [field : SerializeField] public Dictionary<PowerData,Power> powers = new Dictionary<PowerData,Power>();
     [field : SerializeField] public PowerSelectionSlot[] selectionSlots {get;private set;}
     [field : SerializeField] public int numberOfPrioritySlots {get;private set;}
+    public int numberOfPowersToSelect =0;
+
     private Transform player;
     PowerRandomizer powerRandomizer;
     [SerializeField] GameObject powerWindow;
 
     void Start()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindWithTag("Player").transform; // ??? Change in future
         powerRandomizer = GetComponent<PowerRandomizer>();
         RollPowers();
     }
@@ -55,15 +58,17 @@ public class PowersAdquiredContainer : MonoBehaviour
 
         if(powers.ContainsKey(power))
         {
+            print("rank up");
             powers[power].RankUP();
             powerSlots[power].UpdateSlot(power,powers[power]);
+            return;
         }
         
         PowerAdquiredSlot slot = Instantiate(slotPrefab,transform.position,Quaternion.identity,transform).GetComponent<PowerAdquiredSlot>();
         slot.Initialize(power);
         powerSlots.Add(power,slot);
 
-        Power powerGO = Instantiate(power.powerPrefab,Vector2.zero,Quaternion.identity,player).GetComponent<Power>();
+        Power powerGO = Instantiate(power.powerPrefab,Vector3.zero,Quaternion.identity,player).GetComponent<Power>();
         powerGO.Initialize(power);
         powers.Add(power,powerGO);
     }

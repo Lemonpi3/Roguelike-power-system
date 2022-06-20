@@ -41,8 +41,8 @@ public class OrbitPower : Power
 
     private void AddNewOrbitObj()
     {
-        OrbitObject orbitObject = Instantiate(powerData.orbitingObj,transform.position,Quaternion.identity,transform).GetComponent<OrbitObject>();
-        orbitObject.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,default,default,powerData.affectTag);
+        OrbitObject orbitObject = Instantiate(powerData.orbitingObj,Vector3.zero,Quaternion.identity,transform).GetComponent<OrbitObject>();
+        orbitObject.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,Vector3.zero,Vector3.zero,powerData.affectTag);
         orbitObjects.Add(orbitObject);
     }
 
@@ -71,7 +71,7 @@ public class OrbitPower : Power
             float theta = (2 * Mathf.PI / numObjects) * i;
             float x = Mathf.Cos(theta) * orbitDistance;
             float y = Mathf.Sin(theta) * orbitDistance;
-            orbitObjects[i].transform.position= new Vector3(x,y, orbitObjects[i].transform.position.z);
+            orbitObjects[i].transform.localPosition= new Vector3(x,y, orbitObjects[i].transform.position.z);
         }
     }
 
@@ -79,7 +79,7 @@ public class OrbitPower : Power
     {
         foreach (OrbitObject obj in orbitObjects)
         {
-            obj.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,default,default,powerData.affectTag);
+            obj.UpdateAreaStats(damage,attackSpeed,powerData.orbitingObjSizeScale * (float)player.powerSizeModifier,player,Vector3.zero,Vector3.zero,powerData.affectTag);
         }
     }
 }

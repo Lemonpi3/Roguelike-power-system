@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Player : Stats
+public class Player : Character
 {
     [field : SerializeField] public PlayerData playerClass {get; private set;}
     [field : SerializeField] public double powerDamageModifier {get; private set;}
@@ -15,9 +15,16 @@ public class Player : Stats
     [field : SerializeField] public int xpCurrent {get; private set;}
     [field : SerializeField] public double xpGainModifier {get; private set;}
 
+    XPBar xpBar;
+    PowersAdquiredContainer powerContainer;
+
     void Start()
     {
+        xpToLevel = 1;
         InitializeStats();
+        xpBar = FindObjectOfType<XPBar>();
+        powerContainer = FindObjectOfType<PowersAdquiredContainer>();
+
         GainXP(1);
         StartCoroutine(HpRegen());
     }
@@ -40,8 +47,7 @@ public class Player : Stats
     {
         if(initialazed || playerClass == null) { return; }
 
-        moveSpeedDefault = playerClass.moveSpeed <= 0 ? 1 : playerClass.moveSpeed;
-        hpDefault = playerClass.hp <= 0 ? 1 : playerClass.hp;
+        charecterData = (CharecterData)playerClass;
 
         powerDamageModifier = playerClass.powerDamageModifier < 0 ? 1 : playerClass.powerDamageModifier;
         powerCooldownModifier = playerClass.powerCooldownModifier < 0 ? 1 : playerClass.powerCooldownModifier;
@@ -99,17 +105,23 @@ public class Player : Stats
     {
         xpCurrent += (amount + (int)(amount * xpGainModifier));
         int remanent = xpCurrent - xpToLevel;
-    
+        // print($"amount: {amount}, xpCurrent: {xpCurrent}, xpToLevel: {xpToLevel}, remanent: {remanent}");
+
         if (xpCurrent >= xpToLevel)
         {
             level++;
             xpCurrent = 0;
-            xpToLevel=(int)(0.5*level) <= 0 ? 1 : (int)(0.5*level);
+            xpToLevel=(int)(0.5*level) <= 0 ? 1 : (int)(0.5*level) + 10*level;
+            powerContainer.gameObject.SetActive(true);
+            powerContainer.numberOfPowersToSelect += 1;
+            powerContainer.RollPowers();
         }
+
         if(remanent > 0)
         {
             GainXP(remanent);
         }
+        xpBar.UpdateBar(xpCurrent,xpToLevel);
     }
 
 }

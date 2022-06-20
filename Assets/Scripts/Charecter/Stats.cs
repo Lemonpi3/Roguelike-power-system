@@ -20,14 +20,14 @@ public class Stats : MonoBehaviour
         hpModifier = hpModifier < 0 ? 1 : hpModifier;
         hpMax = hpDefault > 0 ? (double)(hpDefault * hpModifier) : 1;
         hpCurrent = hpMax;
-
+        
         moveSpeed = moveSpeedDefault > 0 ? moveSpeedDefault * (float)moveSpeedModifier : 1;
     }
 
     public virtual void TakeDamage(double amount, Player player=null)
     {
         hpCurrent -= amount;
-        if(hpCurrent > 0) 
+        if(hpCurrent <= 0) 
         { 
             Die(player);
         }

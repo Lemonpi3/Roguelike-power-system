@@ -34,10 +34,22 @@ public abstract class Power : MonoBehaviour
     public virtual void RankUP()
     {
         if(rank <= 0) {rank = 1;}
-        if(rank+1 > _power.maxRank){return;}
+        // if(rank == _power.maxRank){return;}
         rank += 1;
-        damage = _power.dmgUpPerRank.Length >= rank-2 ? damage + _power.dmgUpPerRank[rank-2] : damage + _power.dmgUpPerRank[_power.dmgUpPerRank.Length-2];
-        attackSpeed =  _power.attackSpeedPerRankModifier.Length >= rank-2 ? _power.baseAttackSpeed / _power.attackSpeedPerRankModifier[rank-2] : _power.baseAttackSpeed / _power.attackSpeedPerRankModifier[_power.attackSpeedPerRankModifier.Length-2];
+        damage = _power.dmgUpPerRank.Length > rank ? damage + _power.dmgUpPerRank[rank] : damage + _power.dmgUpPerRank[_power.dmgUpPerRank.Length-1];
+        float value=1;
+        if(_power.attackSpeedPerRankModifier.Length > rank){
+            if(_power.attackSpeedPerRankModifier[rank] != 0){
+                value = _power.attackSpeedPerRankModifier[rank];
+            } 
+        } 
+        else{
+            if( _power.attackSpeedPerRankModifier[_power.attackSpeedPerRankModifier.Length-1] != 0){
+                value =  _power.attackSpeedPerRankModifier[_power.attackSpeedPerRankModifier.Length-1];
+            }
+        }
+        attackSpeed = _power.baseAttackSpeed / value;
+        Debug.Log("rank: "+rank);
     }
 
     public virtual void UpdatePower()

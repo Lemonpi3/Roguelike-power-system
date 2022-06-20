@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     [field : SerializeField] public double enemyHPModifier {get;private set;}
     [field : SerializeField] public double enemySpeedModifier {get;private set;}
     [field : SerializeField] public double enemySpawnSpeedModifier {get;private set;}
+    [field : SerializeField] public int maxEnemyCount {get; set;}
     [field : SerializeField] public int enemyCount {get; set;}
+
 
     ///<summary>Modifies enemy HP modifier in an aditive way</summary>
     public void ModifyEnemy_HPModifier(double amount)

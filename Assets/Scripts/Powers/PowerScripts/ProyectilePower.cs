@@ -40,9 +40,9 @@ public class ProyectilePower : Power
     {
         base.RankUP();
         //checks if the lenght of the list is bigger or equal to the rank-2 if its smaller it uses the last member of the list.
-        numberOfProyectiles = powerData.proyectilesAddedPerRank.Length >= rank-2 ? numberOfProyectiles + powerData.proyectilesAddedPerRank[rank-2] : numberOfProyectiles + powerData.proyectilesAddedPerRank[powerData.proyectilesAddedPerRank.Length-2];
+        numberOfProyectiles = powerData.proyectilesAddedPerRank.Length > rank ? numberOfProyectiles + powerData.proyectilesAddedPerRank[rank] : numberOfProyectiles + powerData.proyectilesAddedPerRank[powerData.proyectilesAddedPerRank.Length-1];
         
-        proyectileDuration = powerData.proyectileExtraDuration.Length >= rank-2 ? proyectileDuration + powerData.proyectileExtraDuration[rank-2] : proyectileDuration + powerData.proyectileExtraDuration[powerData.proyectileExtraDuration.Length-2];
+        proyectileDuration = powerData.proyectileExtraDuration.Length > rank ? proyectileDuration + powerData.proyectileExtraDuration[rank] : proyectileDuration + powerData.proyectileExtraDuration[powerData.proyectileExtraDuration.Length-1];
     }
 
     private IEnumerator UpdateTarget()

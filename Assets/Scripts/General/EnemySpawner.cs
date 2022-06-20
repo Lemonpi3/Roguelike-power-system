@@ -9,8 +9,7 @@ public class EnemySpawner : MonoBehaviour
     float spawnerLifeTime = 0;
     [SerializeField] float minSpawnRadius = 15;
     [SerializeField] float maxSpawnRadius = 20;
-    [SerializeField] int _maxEnemyCount = 10;
-    
+
     Transform enemiesParent;
     [SerializeField] GameObject enemyPrefab;
 
@@ -23,23 +22,24 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnerLifeTime += Time.deltaTime;
 
-        if(GameManager.instance.enemyCount >= _maxEnemyCount) {return;}
+        if( GameManager.instance.enemyCount >= GameManager.instance.maxEnemyCount) {return;}
+        int spawnRng = Random.Range(0,3);
 
-        if(spawnerLifeTime >= spawnerData.lateGameTime && spawnerData.enemiesToSpawnLate.Length > 0)
+        if(spawnerLifeTime >= spawnerData.lateGameTime && spawnerData.enemiesToSpawnLate.Length > 0 && spawnRng == 2)
         {
             int rng = Random.Range(0,spawnerData.enemiesToSpawnLate.Length);
             SpawnEnemy(spawnerData.enemiesToSpawnLate[rng]);
             return;
         }
 
-        if(spawnerLifeTime >= spawnerData.midGameTime && spawnerData.enemiesToSpawnMid.Length > 0)
+        if(spawnerLifeTime >= spawnerData.midGameTime && spawnerData.enemiesToSpawnMid.Length > 0 && spawnRng == 0)
         {
             int rng = Random.Range(0,spawnerData.enemiesToSpawnMid.Length);
             SpawnEnemy(spawnerData.enemiesToSpawnMid[rng]);
             return;
         }
 
-        if(spawnerData.enemiesToSpawnEarly.Length > 0)
+        if(spawnerData.enemiesToSpawnEarly.Length > 0 && spawnRng == 1)
         {
             int rng = Random.Range(0,spawnerData.enemiesToSpawnEarly.Length);
             SpawnEnemy(spawnerData.enemiesToSpawnEarly[rng]);
@@ -49,6 +49,8 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(EnemyData enemy)
     {
+        if(GameManager.instance.enemyCount >= GameManager.instance.maxEnemyCount) {return;}
+
         int dir = Random.Range(-1, 1);
         if( dir == 0) { dir = 1; }
 
@@ -59,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
 
         float rngY = Random.Range(minSpawnRadius, maxSpawnRadius)*dir;
 
-        Vector3 spawnPos = new Vector3(rngX,rngY,1);
+        Vector3 spawnPos = new Vector3(transform.position.x + rngX,transform.position.y + rngY,1);
 
         Enemy _enemy = Instantiate(enemyPrefab,spawnPos,Quaternion.identity,enemiesParent).GetComponent<Enemy>();
         _enemy.Initialize(enemy);

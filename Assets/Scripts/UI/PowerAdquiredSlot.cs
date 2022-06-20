@@ -19,6 +19,7 @@ public class PowerAdquiredSlot : MonoBehaviour
 
     public void UpdateSlot(PowerData powerData, Power _power)
     {
+        Debug.Log("UPDATED "+ _power.rank);
         icon.sprite = powerData.icon;
         powerRank.text = $"{_power.rank}";
     }

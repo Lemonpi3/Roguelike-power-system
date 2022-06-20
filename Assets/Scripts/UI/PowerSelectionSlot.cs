@@ -30,14 +30,21 @@ public class PowerSelectionSlot : MonoBehaviour
         iconBorder.sprite = power.iconBorder;
 
         powerName.text = power.powerName;
-        powerDescription.text = power.powerDescription[rank];
+        powerDescription.text = power.powerDescription.Length > rank ? power.powerDescription[rank] : power.powerDescription[power.powerDescription.Length-1];
     }
 
     public void SelectPower()
     {
-        Debug.Log(powerName.text + " Selected");
+        // Debug.Log(powerName.text + " Selected");
         powersAdquiredContainer.AddPower(power);
-        Time.timeScale = 1; //resets timeScale
-        transform.parent.gameObject.SetActive(false);
+        powersAdquiredContainer.numberOfPowersToSelect -= 1;
+
+        if(powersAdquiredContainer.numberOfPowersToSelect > 0){
+            powersAdquiredContainer.RollPowers();
+        }else{
+            Time.timeScale = 1; //resets timeScale
+            transform.parent.gameObject.SetActive(false);
+        }
+        
     }
 }

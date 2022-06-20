@@ -21,4 +21,4 @@ MonoBehaviour:
   <moveSpeedModifier>k__BackingField: 1
   <hpModifier>k__BackingField: 1
   <damage>k__BackingField: 0
-  <xpDrop>k__BackingField: 5
+  <xpDrop>k__BackingField: 1

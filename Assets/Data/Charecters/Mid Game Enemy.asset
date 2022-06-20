@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <charecterName>k__BackingField: Med Enemy
   <charecterDescription>k__BackingField: 
-  <charecterSprite>k__BackingField: {fileID: 0}
+  <charecterSprite>k__BackingField: {fileID: 21300000, guid: dd8687209f8251f41a41499560bec9ce, type: 3}
   <characterType>k__BackingField: 2
   <hp>k__BackingField: 10
   <moveSpeed>k__BackingField: 1
   <moveSpeedModifier>k__BackingField: 1
   <hpModifier>k__BackingField: 1
   <damage>k__BackingField: 1
-  <xpDrop>k__BackingField: 10
+  <xpDrop>k__BackingField: 5

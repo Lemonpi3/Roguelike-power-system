@@ -25,7 +25,7 @@ MonoBehaviour:
   affectTag: Enemy
   <maxRank>k__BackingField: 1
   <dmgUpPerLevel>k__BackingField: 1
-  <dmgUpPerRank>k__BackingField: 00000000
+  <dmgUpPerRank>k__BackingField: 01000000
   <powerModifierPerRank>k__BackingField:
   - 0
   <attackSpeedPerRankModifier>k__BackingField:
@@ -35,4 +35,4 @@ MonoBehaviour:
   <posOffSet>k__BackingField: {x: 0, y: 0, z: 0}
   <rotationOffSet>k__BackingField: {x: 0, y: 0, z: 0}
   <areaSizeRankIncrease>k__BackingField:
-  - 0
+  - 1

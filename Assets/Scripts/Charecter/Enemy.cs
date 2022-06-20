@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Stats
+public class Enemy : Character
 {
     Transform target;
     public EnemyData enemyData;
@@ -16,9 +16,8 @@ public class Enemy : Stats
     {
         if(initialazed || _enemyData == null) { return; }
         enemyData = _enemyData;
-
-        moveSpeedDefault = enemyData.moveSpeed <= 0 ? 1 : enemyData.moveSpeed;
-        hpDefault = enemyData.hp <= 0 ? 1 : enemyData.hp;
+        charecterData = (CharecterData)_enemyData;
+        
         
         hpModifier = (enemyData.hpModifier + GameManager.instance.enemyHPModifier) < 0 ? 1 : (enemyData.hpModifier + GameManager.instance.enemyHPModifier);
         moveSpeedModifier = (enemyData.moveSpeedModifier + GameManager.instance.enemySpeedModifier) < 0 ? 1 : (enemyData.moveSpeedModifier + GameManager.instance.enemySpeedModifier);
