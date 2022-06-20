@@ -7,13 +7,15 @@ public class PowersAdquiredContainer : MonoBehaviour
     [field : SerializeField] public GameObject slotPrefab {get; private set;}
     [field : SerializeField] public Dictionary<PowerData,PowerAdquiredSlot> powerSlots = new Dictionary<PowerData,PowerAdquiredSlot>();
     [field : SerializeField] public Dictionary<PowerData,Power> powers = new Dictionary<PowerData,Power>();
+
     [field : SerializeField] public PowerSelectionSlot[] selectionSlots {get;private set;}
+    [SerializeField] GameObject powerWindow;
+
+    [HideInInspector] public int numberOfPowersToSelect =0;
     [field : SerializeField] public int numberOfPrioritySlots {get;private set;}
-    public int numberOfPowersToSelect =0;
 
     private Transform player;
     PowerRandomizer powerRandomizer;
-    [SerializeField] GameObject powerWindow;
 
     void Start()
     {
