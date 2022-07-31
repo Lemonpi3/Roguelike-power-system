@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <charecterName>k__BackingField: Med Enemy
   <charecterDescription>k__BackingField: 
-  <charecterSprite>k__BackingField: {fileID: 21300000, guid: dd8687209f8251f41a41499560bec9ce, type: 3}
+  <charecterSprite>k__BackingField: {fileID: 1499695390335869657, guid: eed10184642f12f41abc75ed16cf5398, type: 3}
   <characterType>k__BackingField: 2
   <hp>k__BackingField: 10
   <moveSpeed>k__BackingField: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <charecterName>k__BackingField: TEST
   <charecterDescription>k__BackingField: 
-  <charecterSprite>k__BackingField: {fileID: 21300000, guid: 3d47101562331e94ebfa27e7a53257dc, type: 3}
+  <charecterSprite>k__BackingField: {fileID: -6417702627716057689, guid: eed10184642f12f41abc75ed16cf5398, type: 3}
   <characterType>k__BackingField: 1
   <hp>k__BackingField: 5
   <moveSpeed>k__BackingField: 1

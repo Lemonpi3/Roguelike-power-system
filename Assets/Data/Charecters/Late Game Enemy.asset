@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <charecterName>k__BackingField: Big Enemy
   <charecterDescription>k__BackingField: 
-  <charecterSprite>k__BackingField: {fileID: 21300000, guid: d3f3ef9deccb22543ba78ee4fd1cc295, type: 3}
+  <charecterSprite>k__BackingField: {fileID: 5001450873488381750, guid: eed10184642f12f41abc75ed16cf5398, type: 3}
   <characterType>k__BackingField: 3
   <hp>k__BackingField: 20
   <moveSpeed>k__BackingField: 1

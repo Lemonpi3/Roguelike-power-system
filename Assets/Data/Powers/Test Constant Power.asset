@@ -17,7 +17,7 @@ MonoBehaviour:
   - Test AoE Power
   <icon>k__BackingField: {fileID: 21300000, guid: a63ee22b7fe2d864890e27fab9c2ed62, type: 3}
   <iconBorder>k__BackingField: {fileID: 21300000, guid: e4f0523b66f367848af29d8fc56a4c7e, type: 3}
-  <powerSelectionColor>k__BackingField: {r: 0.9811321, g: 0.5507298, b: 0.81644934, a: 0.92156863}
+  <powerSelectionColor>k__BackingField: {r: 0.904181, g: 0.9339623, b: 0, a: 0.92156863}
   <powerPrefab>k__BackingField: {fileID: 7570756416485940956, guid: 767a5a3eafa18c04ab5a7cfec9434b55, type: 3}
   <basePowerDamage>k__BackingField: 1
   <basePowerModifier>k__BackingField: 0

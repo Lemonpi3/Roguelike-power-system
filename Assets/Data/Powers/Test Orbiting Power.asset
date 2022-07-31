@@ -17,7 +17,7 @@ MonoBehaviour:
   - Test Orbiting Power
   <icon>k__BackingField: {fileID: 21300000, guid: e9dafd9a9352b364fad0068021d45232, type: 3}
   <iconBorder>k__BackingField: {fileID: 21300000, guid: e19b29eb88fd60d46a5770dd299c9af5, type: 3}
-  <powerSelectionColor>k__BackingField: {r: 0.32226774, g: 0.9622642, b: 0.39798373, a: 1}
+  <powerSelectionColor>k__BackingField: {r: 0, g: 0.8585174, b: 1, a: 1}
   <powerPrefab>k__BackingField: {fileID: 6768196696961196724, guid: 366f22c87a795694eb0d863f6a4724fc, type: 3}
   <basePowerDamage>k__BackingField: 1
   <basePowerModifier>k__BackingField: 0
